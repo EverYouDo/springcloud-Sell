@@ -2,6 +2,7 @@ package com.guier.service;
 
 
 import com.guier.dao.domain.ProductInfo;
+import com.guier.stock.ProductInfoOutput;
 
 import java.util.List;
 
@@ -18,7 +19,7 @@ public interface ProductService {
      * @param productIdList
      * @return
      */
-//    List<ProductInfoOutput> findList(List<String> productIdList);
+    List<ProductInfoOutput> findList(List<String> productIdList);
 
     /**
      * 扣库存

@@ -7,12 +7,11 @@ import com.guier.dao.domain.ProductCategory;
 import com.guier.dao.domain.ProductInfo;
 import com.guier.service.CategoryService;
 import com.guier.service.ProductService;
+import com.guier.stock.ProductInfoOutput;
 import com.guier.utils.ResultVOUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,15 +74,17 @@ public class ProductController {
      * @param productIdList
      * @return
      */
-//    @PostMapping("/listForOrder")
-//    public List<ProductInfoOutput> listForOrder(@RequestBody List<String> productIdList) {
+    @PostMapping("/listForOrder")
+    public List<ProductInfoOutput> listForOrder(@RequestBody List<String> productIdList) {
+//    public List<ProductInfoOutput> listForOrder() {
 //        try {
 //            Thread.sleep(2000);
 //        } catch (InterruptedException e) {
 //            e.printStackTrace();
 //        }
-//        return productService.findList(productIdList);
-//    }
+        return productService.findList(productIdList);
+//        return productService.findList(Arrays.asList("11","22"));
+    }
 //
 //    @PostMapping("/decreaseStock")
 //    public void decreaseStock(@RequestBody List<DecreaseStockInput> decreaseStockInputList) {

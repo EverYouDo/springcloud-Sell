@@ -5,10 +5,13 @@ import com.guier.dao.domain.ProductInfo;
 import com.guier.dao.repository.ProductInfoRepository;
 import com.guier.enums.ProductStatusEnum;
 import com.guier.service.ProductService;
+import com.guier.stock.ProductInfoOutput;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -24,16 +27,16 @@ public class ProductServiceImpl implements ProductService {
         return productInfoRepository.findByProductStatus(ProductStatusEnum.UP.getCode());
     }
 
-//    @Override
-//    public List<ProductInfoOutput> findList(List<String> productIdList) {
-//        return productInfoRepository.findByProductIdIn(productIdList).stream()
-//                .map(e -> {
-//                    ProductInfoOutput output = new ProductInfoOutput();
-//                    BeanUtils.copyProperties(e, output);
-//                    return output;
-//                })
-//                .collect(Collectors.toList());
-//    }
+    @Override
+    public List<ProductInfoOutput> findList(List<String> productIdList) {
+        return productInfoRepository.findByProductIdIn(productIdList).stream()
+                .map(e -> {
+                    ProductInfoOutput output = new ProductInfoOutput();
+                    BeanUtils.copyProperties(e, output);
+                    return output;
+                })
+                .collect(Collectors.toList());
+    }
 
 //    @Override
 //    public void decreaseStock(List<DecreaseStockInput> decreaseStockInputList) {
