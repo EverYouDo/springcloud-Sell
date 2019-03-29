@@ -11,3 +11,7 @@ spring:
           username: Guiee
           # Git仓库密码
           password: 12345wyg/.
+          basedir: D:\IdeaProjects\basedir
+eureka:
+  instance:
+    prefer-ip-address: true
