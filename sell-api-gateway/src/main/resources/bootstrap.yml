@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: sell-api-gateway
+  cloud:
+    config:
+      uri: http://localhost:8080  #默认8888
+      profile: dev      # profile对应config server所获取的配置文件中的{profile}
+      label: master
+      discovery:
+        service-id:
+        enabled: true
+  rabbitmq:
+    host: 192.168.246.134

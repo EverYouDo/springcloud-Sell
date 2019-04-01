@@ -12,6 +12,13 @@ spring:
           # Git仓库密码
           password: 12345wyg/.
           basedir: D:\IdeaProjects\basedir
+  rabbitmq:
+    host: 192.168.246.134
 eureka:
   instance:
     prefer-ip-address: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
