@@ -7,11 +7,7 @@ spring:
         git:
           # Git仓库地址
           uri: https://github.com/Guiee/spring-cloud-config-repo.git
-          # Git仓库账号
-          username: Guiee
-          # Git仓库密码
-          password: 12345wyg/.
-          basedir: D:\IdeaProjects\basedir
+#          basedir: D:\IdeaProjects\basedir
   rabbitmq:
     host: 192.168.246.134
 eureka:
